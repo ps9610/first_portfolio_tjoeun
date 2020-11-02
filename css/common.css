@@ -20,7 +20,7 @@ img {vertical-align:middle;}
 #skip {z-index:2;position:absolute;top:0;left:0;width:100%;}
 #skip > li {width:100%;}
 #skip > li > a {display:block;line-height:0;font-size:0;text-align:center;color:#333;background:#fff;}
-#skip > li > a:focus {line-height:20px;font-size:12px;font-weight:600;}
+#skip > li > a:focus {line-height:21px;font-size:12px;font-weight:800;outline:none;}
 
 
 /* wrap */

@@ -25,7 +25,7 @@
 
     <!-- 오픈소스 -->
     <script src="./js/lib/jquery-1.12.4.min.js"></script>
-    <script src="./js/lib/prefixfree.min.js"></script>
+    <!-- <script src="./js/lib/prefixfree.min.js"></script> -->
     <script src="./js/lib/jquery.touchSwipe.js"></script>
     <script src="./js/lib/jquery.easing.1.3.js"></script>
 
@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="h-center">
-            <h2><img src="./img/logo.gif" alt="The Shilla Hotels & Resorts 메인 로고"></h2>
+            <h2><a href="https://www.shillahotels.com/index.do" title="신라호텔 메인홈페이지"><img src="./img/logo.gif" alt="The Shilla Hotels & Resorts 메인 로고"></a></h2>
         </div>
         <div class="h-right">
             <div class="row1 fixedclear">
@@ -74,7 +74,9 @@
                 <span class="rewards-join"><a href="#" title="신라리워즈 가입">신라리워즈 가입<i></i></a></span>
                 <span class="confirm"><a href="#" title="예약확인">예약확인</a></span>
                 <div class="language">
-                    <img src="./img/globalBox.gif" alt="언어선택박스"><span>한국어</span></div>    
+                    <img src="./img/globalBox.gif" alt="언어선택박스">
+                    <span>한국어</span>
+                </div>    
             </div>
             <div class="row2 fixedclear">
                 <span class="introduce">
@@ -91,7 +93,33 @@
     </div>
 </header>
 <main id="main">
-    <section id="section1"></section>
+    <section id="section1">
+        <div class="slide-container">
+            <div class="slide-view">
+                <ul class="slide-wrap find">
+                    <li><a href="#"><img src="./img/slide04.jpg" alt="신라스테이 Members Only REWARDS 24 HOURS STAY"></a></li>
+                    <li><a href="#"><img src="./img/slide00.jpg" alt="신라스테이 Members Only REWARDS SHILLA STAY WEEK"></a></li>
+                    <li><a href="#"><img src="./img/slide01.jpg" alt="신라스테이 Members Only REWARDS OWN YOUR SHILLA STAY"></a></li>
+                    <li><a href="#"><img src="./img/slide02.jpg" alt="제주신라호텔 Members Only REWARDS WINTER ROMANTIC HOLIDAY"></a></li>
+                    <li><a href="#"><img src="./img/slide03.jpg" alt="서울신라호텔 Members Only REWARDS AUTUMN AFTERNOON TEA"></a></li>
+                    <li><a href="#"><img src="./img/slide04.jpg" alt="신라스테이 Members Only REWARDS 24 HOURS STAY"></a></li>
+                    <li><a href="#"><img src="./img/slide00.jpg" alt="신라스테이 Members Only REWARDS SHILLA STAY WEEK"></a></li>
+                </ul>
+            </div>
+            <div class="btn-wrap fixedclear">
+                <div class="left-btn"><a href="javascript:void(0)" class="blind" title="이전버튼">이전버튼</a></div>
+                <div class="right-btn"><a href="javascript:void(0)" class="blind" title="다음버튼">다음버튼</a></div>
+            </div>
+            <ul class="page-btn">
+               <li></li> 
+               <li></li> 
+               <li></li> 
+               <li></li> 
+               <li></li> 
+               <li></li> 
+            </ul>
+        </div>
+        </section>
     <section id="section2"></section>
     <section id="section3"></section>
     <section id="section4"></section>
@@ -100,7 +128,7 @@
     <section id="section7"></section>
 </main>
 <footer id="footer">
-
+<script src="./js/section1.js"></script>
 </footer>
 </div>
 </body>
