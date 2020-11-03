@@ -3,6 +3,12 @@
 호스트(닷홈주소) / 닷홈아이디 / 닷홈비밀번호 / 
 http://sohye.dothome.co.kr/ / sohye / qkthgp6438!
 
+
+반응형 테스트 프레임워크 다음
+
+http://troy.labs.daum.net/
+
+
 html 파일 안에 내가 올릴거 저장 - 이름 바꾸기
 
 http://sohye.dothome.co.kr/저장한파일명
