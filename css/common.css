@@ -10,6 +10,7 @@ i, em, address {font-style:normal;} /* |가 반듯하게 되게 함*/
 
 ul, li {list-style: none;}
 a {color: #444; text-decoration: none;}
+a:focus {outline:1px solid #ccc;}
 h1, h2, h3, h4, h5, h6 {font-weight:normal; font-size:14px;}
 img {vertical-align:middle;}
 .fixedclear:after {content: "";display:block;clear:both;} /* floating hack */
