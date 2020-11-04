@@ -179,7 +179,14 @@
 #main #section4 .wrap .rewards-wrap > ul > li:nth-child(3) > a {display:block;width:100%;height:46px;}
 #main #section4 .wrap .rewards-wrap > ul > li:nth-child(3) > a > img {width:100%;height:100%;}
 
-#main #section4 .wrap .rewards-wrap .rewards-detail {display:block;width:100%;height:45px;margin-left:0;background:#d5c;}
-#main #section4 .wrap .rewards-wrap .rewards-join {position:absolute;top:0;right:0;background:#c00;}
+#main #section4 .wrap .rewards-wrap .rewards-detail {position:relative;display:block;width:100%;height:45px;margin-left:0;}
+#main #section4 .wrap .rewards-wrap .rewards-detail > strong {display:block;width:724px;height:42px;}
+#main #section4 .wrap .rewards-wrap .rewards-detail > strong > img {width:100%;height:100%;}
+#main #section4 .wrap .rewards-wrap .rewards-detail > span {position:absolute;bottom:1px;right:50%;margin-right:16px;display:block;width:77px;height:20px;}
+#main #section4 .wrap .rewards-wrap .rewards-detail > span > a {display:block;width:100%;height:100%;background:url(../img/btnRwMore.gif) no-repeat;}
+#main #section4 .wrap .rewards-wrap .rewards-join {position:absolute;bottom:48px;right:79px;display:block;width:211px;height:135px;}
+#main #section4 .wrap .rewards-wrap .rewards-join > img {width:100%;height:100%;}
+#main #section4 .wrap .rewards-wrap .rewaids-btn {position:absolute;bottom:48px;right:60px;width:113px;height:34px;}
+#main #section4 .wrap .rewards-wrap .rewaids-btn > a {display:block;width:100%;height:100%;background:url(../img/btnRwJoin.gif);}
 
 #footer {z-index:1;position:relative;width:100%;height:353px;}
