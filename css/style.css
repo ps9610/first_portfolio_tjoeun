@@ -254,23 +254,31 @@
 
 #footer .footer2 {width:100%;}
 #footer .footer2 .wrap {width:1200px;height:183px;margin:0 auto;}
-#footer .footer2 .wrap .row3 {width:100%;height:60px;border-bottom:1px solid rgba(0,0,0,.2);}
-#footer .footer2 .wrap .row3-left {float:left;width:60%;height:13px;padding-top:25px;}
-#footer .footer2 .wrap .row3-left > span {float:left;display:block;height:100%;}
-#footer .footer2 .wrap .row3-left .agree {width:99px;background:url(../img/footLinkBox.gif) no-repeat 0 0;}
-#footer .footer2 .wrap .row3-left .agree > a {display:inline-block;}
-#footer .footer2 .wrap .row3-left .policy {width:123px;background:url(../img/footLinkBox.gif) no-repeat 28.3% 0;}
-#footer .footer2 .wrap .row3-left .policy > a {display:inline-block;}
-#footer .footer2 .wrap .row3-left .email {width:134px;background:url(../img/footLinkBox.gif) no-repeat 65.5% 0;}
-#footer .footer2 .wrap .row3-left .email > a {display:inline-block;}
-#footer .footer2 .wrap .row3-left .audit {width:118px;background:url(../img/footLinkBox.gif) no-repeat 100% 0;}
-#footer .footer2 .wrap .row3-left .audit > a {display:inline-block;}
+#footer .footer2 .wrap .row3 {position:relative;width:100%;height:60px;border-bottom:1px solid rgba(0,0,0,.2);}
+#footer .footer2 .wrap .row3 .row3-left {float:left;width:100%;height:13px;padding-top:25px;}
+#footer .footer2 .wrap .row3 .row3-left > span {float:left;display:block;height:100%;}
+#footer .footer2 .wrap .row3 .row3-left .agree {width:99px;background:url(../img/footLinkBox.gif) no-repeat 0 0;}
+#footer .footer2 .wrap .row3 .row3-left .agree > a {display:inline-block;}
+#footer .footer2 .wrap .row3 .row3-left .policy {width:123px;background:url(../img/footLinkBox.gif) no-repeat 28.3% 0;}
+#footer .footer2 .wrap .row3 .row3-left .policy > a {display:inline-block;}
+#footer .footer2 .wrap .row3 .row3-left .email {width:134px;background:url(../img/footLinkBox.gif) no-repeat 65.5% 0;}
+#footer .footer2 .wrap .row3 .row3-left .email > a {display:inline-block;}
+#footer .footer2 .wrap .row3 .row3-left .audit {width:118px;background:url(../img/footLinkBox.gif) no-repeat 100% 0;}
+#footer .footer2 .wrap .row3 .row3-left .audit > a {display:inline-block;}
 
-#footer .footer2 .wrap .row3-right {float:right;width:10%;height:13px;margin-top:25px;}
-#footer .footer2 .wrap .row3-right > span {float:left;height:100%;display:block;height:100%;}
-#footer .footer2 .wrap .row3-right .english {width:68px;background:#c99;/* url(../img/footSelectLang.gif) no-repeat 26% 50%; */}
-#footer .footer2 .wrap .row3-right .english > a {display:block;}
-#footer .footer2 .wrap .row3-right .japanish {width:50px;background:#9c9;/* url(../img/footSelectLang.gif) no-repeat 57.9% 50%; */}
-#footer .footer2 .wrap .row3-right .japanish > a {display:block;}
-#footer .footer2 .wrap .row3-right .chinese {width:70px;;background:#c99;/* url(../img/footSelectLang.gif) no-repeat 92% 50%; */}
-#footer .footer2 .wrap .row3-right .chinese > a {display:block;}
+#footer .footer2 .wrap .row3 .row3-right {position:absolute;top:0;right:-2px;float:left;height:13px;margin-top:25px;}
+#footer .footer2 .wrap .row3 .row3-right > span {float:left;height:100%;display:block;height:100%;}
+#footer .footer2 .wrap .row3 .row3-right .english {width:68px;background:url(../img/footSelectLang.gif) no-repeat 30% 50%;}
+#footer .footer2 .wrap .row3 .row3-right .english > a {display:block;width:100%;height:100%;}
+#footer .footer2 .wrap .row3 .row3-right .japanish {width:50px;background:url(../img/footSelectLang.gif) no-repeat 62% 50%;}
+#footer .footer2 .wrap .row3 .row3-right .japanish > a {display:block;width:100%;height:100%;}
+#footer .footer2 .wrap .row3 .row3-right .chinese {width:70px;;background:url(../img/footSelectLang.gif) no-repeat 98% 50%;}
+#footer .footer2 .wrap .row3 .row3-right .chinese > a {display:block;width:100%;height:100%;}
+
+#footer .footer2 .wrap .row4 {width:100%;margin-bottom:40px;}
+#footer .footer2 .wrap .row4 #address {position:relative;width:100%;}
+#footer .footer2 .wrap .row4 #address > span {display:block;}
+#footer .footer2 .wrap .row4 #address > span:nth-child(1) {margin-top:15px;width:981px;height:66px;}
+#footer .footer2 .wrap .row4 #address > span:nth-child(1) > img {width:100%;height:100%;}
+#footer .footer2 .wrap .row4 #address > span:nth-child(2) {position:absolute;top:6px;left:57.5%;width:88px;height:17px;background:url(../img/footLinkbtn.gif) no-repeat 50% 0;}
+#footer .footer2 .wrap .row4 #address > span:nth-child(2) > a {display:block;width:100%;height:100%;}
