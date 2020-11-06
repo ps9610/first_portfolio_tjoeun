@@ -118,7 +118,8 @@
 #main #section2 .details .left-wrap .guests .child > div .child-img > img {display:block;width:100%;height:14px;}
 #main #section2 .details .left-wrap .guests .child > div .child-caution {position:relative;display:inline-block;width:13px;height:14px;margin:3px 0;}
 #main #section2 .details .left-wrap .guests .child > div .child-caution > a {z-index:1;position:relative;display:block;width:100%;height:13px;margin-left:2px;background:url(../img/ico_tooltip.png);}
-#main #section2 .details .left-wrap .guests .child > div .child-caution > p {z-index:2;position:absolute;bottom:22px;left:13px;width:222px;background:#fff;padding:5px 13px 3px;border:1px solid #dcdcdc;border-radius:2px;}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > p {z-index:2;position:absolute;bottom:22px;left:1px;width:222px;background:#fff;padding:5px 13px 3px;border:1px solid #dcdcdc;border-radius:2px;}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > a:after {content:"";display:inline-block;background:#d55;}
 #main #section2 .details .left-wrap .guests .child > div .child-caution > p .hidden {display:block;width:100%;font-size:11px;line-height:22px;color:#727272;letter-spacing:0.5px;}
 #main #section2 .details .left-wrap .guests .child .child-txt {display:block;width:56px;height:20px;margin-top:5px}
 #main #section2 .details .left-wrap .guests .child .child-txt > a {display:block;line-height:20px;font-size:16px;text-align:center;font-weight:600;color:#333;}
