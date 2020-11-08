@@ -46,7 +46,7 @@
 #header .wrap .h-right .row2  .rewards:hover > i {display:block;}
 
 #main {z-index:2;position:relative;width:100%;}
-#main #section1 {width:100%;}
+#main #section1 {z-index:1;position:relative;width:100%;}
 #main #section1 .slide-container {position:relative;width:100%;height:650px;overflow:hidden;}
 #main #section1 .slide-container .slide-view {z-index:1;position:relative;width:100%;height:100%;margin:0 auto;}
 #main #section1 .slide-container .slide-view .slide-wrap {position:relative;/* width:calc(1920px*7); */width:1920px;height:100%;margin:0 auto;/* margin-left:-1920px; */}
@@ -68,7 +68,7 @@
 #main #section1 .slide-container .page-btn > li a.page {display:block;border:2px solid #fff;background:#fff;border-radius:50%;width:8px;height:8px;}
 #main #section1 .slide-container .page-btn > li .page.addPage {position:relative;bottom:2px;width:13px;height:13px;background:transparent;}
 
-#main #section2 {width:100%;}
+#main #section2 {z-index:2;position:relative;width:100%;}
 #main #section2 .details {width:1200px;margin:0 auto;padding-top:42px;}
 #main #section2 .details .left-wrap {z-index:1;position:relaitve;float:left;width:1002px;}
 #main #section2 .details .left-wrap:after {z-index:2;position:relative;top:0;content:"";display:block;width:100%;height:1px;background:#eaeaea;}
@@ -117,10 +117,10 @@
 #main #section2 .details .left-wrap .guests .child > div .child-img {display:inline-block;width:36px;height:14px;margin:3px 0;}
 #main #section2 .details .left-wrap .guests .child > div .child-img > img {display:block;width:100%;height:14px;}
 #main #section2 .details .left-wrap .guests .child > div .child-caution {position:relative;display:inline-block;width:13px;height:14px;margin:3px 0;}
-#main #section2 .details .left-wrap .guests .child > div .child-caution > a {z-index:1;position:relative;display:block;width:100%;height:13px;margin-left:2px;background:url(../img/ico_tooltip.png);}
-#main #section2 .details .left-wrap .guests .child > div .child-caution > p {z-index:2;position:absolute;bottom:22px;left:1px;width:222px;background:#fff;padding:5px 13px 3px;border:1px solid #dcdcdc;border-radius:2px;}
-#main #section2 .details .left-wrap .guests .child > div .child-caution > a:after {content:"";display:inline-block;background:#d55;}
-#main #section2 .details .left-wrap .guests .child > div .child-caution > p .hidden {display:block;width:100%;font-size:11px;line-height:22px;color:#727272;letter-spacing:0.5px;}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > a {display:block;width:100%;height:13px;margin-left:2px;background:url(../img/ico_tooltip.png);}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > a .tooltips {display:none;text-indent:0;position:absolute;bottom:22px;left:0;width:222px;line-height:22px;padding:5px 13px 3px;border:1px solid #dcdcdc;background:#fff;border-radius:2px;font-size:11px;color:#727272;letter-spacing:0.5px;}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > a .tooltips:after {content:"";position:absolute;bottom:-7px;left:-1px;width:6px;height:7px;background:url(../img/bg_main_more.png) no-repeat 50% 0;}
+#main #section2 .details .left-wrap .guests .child > div .child-caution > a:hover .tooltips {display:block;}/* hover가 after의 부모 요소 역할을 함 */
 #main #section2 .details .left-wrap .guests .child .child-txt {display:block;width:56px;height:20px;margin-top:5px}
 #main #section2 .details .left-wrap .guests .child .child-txt > a {display:block;line-height:20px;font-size:16px;text-align:center;font-weight:600;color:#333;}
 
@@ -128,8 +128,11 @@
 #main #section2 .details .left-wrap .guests .baby > div {width:56px;height:20px;}
 #main #section2 .details .left-wrap .guests .baby > div .baby-img {display:inline-block;width:25px;height:14px;margin:3px 0;margin-left:6px;}
 #main #section2 .details .left-wrap .guests .baby > div .baby-img > img {display:block;width:100%;height:14px;}
-#main #section2 .details .left-wrap .guests .baby > div .baby-caution {display:inline-block;width:13px;height:14px;margin:3px 0;}
+#main #section2 .details .left-wrap .guests .baby > div .baby-caution {position:relative;display:inline-block;width:13px;height:14px;margin:3px 0;}
 #main #section2 .details .left-wrap .guests .baby > div .baby-caution > a {display:block;width:100%;height:13px;margin-left:2px;background:url(../img/ico_tooltip.png);}
+#main #section2 .details .left-wrap .guests .baby > div .baby-caution > a .tooltips {display:none;text-indent:0;position:absolute;bottom:22px;left:0;width:69px;line-height:22px;padding:5px 13px 3px;border:1px solid #dcdcdc;background:#fff;border-radius:2px;font-size:11px;color:#727272;letter-spacing:0.5px;}
+#main #section2 .details .left-wrap .guests .baby > div .baby-caution > a .tooltips:after {content:"";position:absolute;bottom:-7px;left:-1px;width:6px;height:7px;background:url(../img/bg_main_more.png) no-repeat 50% 0;}
+#main #section2 .details .left-wrap .guests .baby > div .baby-caution > a:hover .tooltips {display:block;}
 #main #section2 .details .left-wrap .guests .baby .baby-txt {display:block;width:56px;height:20px;margin-top:5px}
 #main #section2 .details .left-wrap .guests .baby .baby-txt > a {display:block;line-height:20px;font-size:16px;text-align:center;font-weight:600;color:#333;}
 
