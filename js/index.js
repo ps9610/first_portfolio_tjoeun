@@ -39,25 +39,27 @@
             var setId = 0;
 
             function prevSlideFn(){
-                cnt++;
+                cnt--;
                 mainSlideFn();
                 //fadeSlideFn();
             };            
 
             function nextSlideFn(){
-                cnt--;
+                cnt++;
                 mainSlideFn();
                 //fadeSlideFn();
             };          
 
-            // function mainSlideFn(){
-            //     $(".slide-wrap").stop().animate({ left:-1920*cnt },0,function(){
-            //         if(cnt<0){cnt=4;}
-            //         if(cnt>4){cnt=0;}
-            //         $(".slide-wrap").stop().animate({ left:-1920*cnt },0)
-            //     })
-            //     pageBtnFn(cnt);
-            // }
+            function mainSlideFn(){
+                $(".slide-wrap").stop().animate({ left:-1920*cnt, opacity:1 },0,function(){
+                    if(cnt<0){cnt=7;}
+                    if(cnt>7){cnt=0;}
+                    $(".slide-wrap").stop().animate({ left:-1920*cnt, opacity:0 },function(){
+                        $(this).css({opacity:1})
+                    })
+                })
+                pageBtnFn(cnt);
+            }
 
 //.slide-wrap li:nth-child(5) {opacity:1;}
 //.slide-wrap li:nth-child(4) {opacity:0;}
@@ -93,15 +95,16 @@
 // cnt번째 슬라이드가 opacity 1일때, 나머지 슬라이드는 opacity 0으로 설정한다
 // each 함수 사용
 
-                function mainSlideFn(){
-                    cnt = 5;
-                    $(".slide-wrap lix").each(function(cnt){
-                        cnt<0? cnt=4 : cnt;
-                        cnt>4? cnt=0 : cnt;
-                    })
-                
-                //pageBtnFn(cnt);
-            }
+            // cnt++; //증감수라서 처음이 -1로 시작해야 0부터 나옴
+            // if(cnt > 3){
+            //     cnt = -1; //마지막 슬라이드를 0으로 셋팅, (마지막이전 마지막)
+            // }
+            // $(".notice-list li").stop().animate({top:24/* css에서 li top값이 24니까} */},0).css({zIndex:2}); //롤링 대상이 되는 요소를 앞에 쓰면됨
+            // //👆 모두 초기화 24픽셀 아래에서 대기
+            // $(".notice-list li").eq(cnt<0? 4:cnt).stop().animate({top:0},0)/* 기다리는 요소들은 무조건 0초해야 일시정지함 */.css({zIndex:1}); //롤링 대상이 되는 요소를 앞에 쓰면됨
+            // //👆 첫번째만 화면에서 대기
+            // $(".notice-list li").eq(cnt+1).stop().animate({top:24},0)/* top 24에서 일시정지 */.animate({top:0},1000/* 올라오는데 걸리는 시간 1초 */).css({zIndex:3}); //롤링 대상이 되는 요소를 앞에 쓰면됨
+            // //👆 24픽셀 아래에서 위로 부드럽게 올라온다.
 
             // function fadeSlideFn(){
             //     $(".slide-wrap").(400,function(){
@@ -133,7 +136,7 @@
 
             // initFn();
 
-            /*$(".page").each(function(index){
+            $(".page").each(function(index){
                 $(this).on({
                     click : function(){
                         cnt = index;
@@ -146,7 +149,7 @@
                 z<0? z=5 : z;
                 $(".page").removeClass("addPage");
                 $(".page").eq(z).addClass("addPage");
-            }*/
+            }
 
             
         },
