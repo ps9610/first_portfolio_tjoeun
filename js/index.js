@@ -16,7 +16,21 @@
         },
 
         headerFn    :function(){
-
+            //#header .wrap .h-right .row1 .language
+            // 헤더의 langKo 박스를 클릭하면 addclass된다.
+            
+            $(".langKo").on({
+                click : function(){
+                    $("#header ul").addClass(".addLang");
+                    $(".addLang").css("visibility","visible");
+                }
+            });
+            $(".L-korea a ").on({
+                click : function(){
+                    $("#header ul").removeClass(".addLang");
+                    $(".addLang").css("visibility","hidden");
+                }
+            })
         },
 
         section1Fn  :function(){
@@ -25,13 +39,13 @@
             var setId = 0;
 
             function prevSlideFn(){
-                cnt--;
+                cnt++;
                 mainSlideFn();
                 //fadeSlideFn();
             };            
 
             function nextSlideFn(){
-                cnt++;
+                cnt--;
                 mainSlideFn();
                 //fadeSlideFn();
             };          
@@ -45,21 +59,48 @@
             //     pageBtnFn(cnt);
             // }
 
-            var img = 5;
-            
-            // $(".slide-wrap li").eq(0).siblings().hide();
+//.slide-wrap li:nth-child(5) {opacity:1;}
+//.slide-wrap li:nth-child(4) {opacity:0;}
+//.slide-wrap li:nth-child(3) {opacity:0;}
+//.slide-wrap li:nth-child(2) {opacity:0;}
+//.slide-wrap li:nth-child(1) {opacity:0;}
+
+//.slide-wrap li:nth-child(5) {opacity:0;}
+//.slide-wrap li:nth-child(4) {opacity:1;}
+//.slide-wrap li:nth-child(3) {opacity:0;}
+//.slide-wrap li:nth-child(2) {opacity:0;}
+//.slide-wrap li:nth-child(1) {opacity:0;}
+ 
+//.slide-wrap li:nth-child(5) {opacity:0;}
+//.slide-wrap li:nth-child(4) {opacity:0;}
+//.slide-wrap li:nth-child(3) {opacity:1;}
+//.slide-wrap li:nth-child(2) {opacity:0;}
+//.slide-wrap li:nth-child(1) {opacity:0;}
+
+//.slide-wrap li:nth-child(5) {opacity:0;}
+//.slide-wrap li:nth-child(4) {opacity:0;}
+//.slide-wrap li:nth-child(3) {opacity:0;}
+//.slide-wrap li:nth-child(2) {opacity:1;}
+//.slide-wrap li:nth-child(1) {opacity:0;}
+
+//.slide-wrap li:nth-child(5) {opacity:0;}
+//.slide-wrap li:nth-child(4) {opacity:0;}
+//.slide-wrap li:nth-child(3) {opacity:0;}
+//.slide-wrap li:nth-child(2) {opacity:0;}
+//.slide-wrap li:nth-child(1) {opacity:1;}
+
+// 필요한 변수 : nth-child (cnt) cnt 1 2 3 4 5
+// cnt번째 슬라이드가 opacity 1일때, 나머지 슬라이드는 opacity 0으로 설정한다
+// each 함수 사용
+
                 function mainSlideFn(){
-                    if(cnt == img){
-                        $(".slide-wrap li").eq(cnt).fadeOut(1000);
-                        $(".slide-wrap li").eq(0).fadeIn();
-                        cnt=0;    
-                    }
-                    else{
-                        $(".slide-wrap li").eq(cnt).fadeOut(1000);
-                        $(".slide-wrap li").eq(cnt+1).fadeIn();
-                    }
+                    cnt = 5;
+                    $(".slide-wrap lix").each(function(cnt){
+                        cnt<0? cnt=4 : cnt;
+                        cnt>4? cnt=0 : cnt;
+                    })
                 
-                pageBtnFn(cnt);
+                //pageBtnFn(cnt);
             }
 
             // function fadeSlideFn(){
@@ -92,7 +133,7 @@
 
             // initFn();
 
-            $(".page").each(function(index){
+            /*$(".page").each(function(index){
                 $(this).on({
                     click : function(){
                         cnt = index;
@@ -105,7 +146,7 @@
                 z<0? z=5 : z;
                 $(".page").removeClass("addPage");
                 $(".page").eq(z).addClass("addPage");
-            }
+            }*/
 
             
         },
