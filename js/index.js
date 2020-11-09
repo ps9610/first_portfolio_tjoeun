@@ -41,55 +41,31 @@
             function prevSlideFn(){
                 cnt--;
                 mainSlideFn();
-                //fadeSlideFn();
             };            
 
             function nextSlideFn(){
                 cnt++;
                 mainSlideFn();
-                //fadeSlideFn();
-            };          
-
+            };
+            
             function mainSlideFn(){
-                $(".slide-wrap").stop().animate({ left:-1920*cnt, opacity:1 },0,function(){
-                    if(cnt<0){cnt=7;}
-                    if(cnt>7){cnt=0;}
-                    $(".slide-wrap").stop().animate({ left:-1920*cnt, opacity:0 },function(){
-                        $(this).css({opacity:1})
-                    })
+/*                 $(".slide-wrap").stop().animate({ left:-1920*cnt },0,function(){
+                    if(cnt<0){cnt=3;}
+                    if(cnt>3){cnt=0;}
+                    $(".slide-wrap").stop().animate({ left:-1920*cnt },0)
+                }) */
+                $(".slide-wrap li").eq(cnt).css({ zIndex:1 }).stop().animate({ opacity:0 },500,function(){
+                    if(cnt<0){cnt=3;}
+                    if(cnt>3){cnt=0;}
+                    $(".slide-wrap li").eq(cnt).css({ zIndex:2 }).stop().animate({ opacity:1 },0)
                 })
                 pageBtnFn(cnt);
             }
 
-//.slide-wrap li:nth-child(5) {opacity:1;}
-//.slide-wrap li:nth-child(4) {opacity:0;}
-//.slide-wrap li:nth-child(3) {opacity:0;}
-//.slide-wrap li:nth-child(2) {opacity:0;}
-//.slide-wrap li:nth-child(1) {opacity:0;}
-
-//.slide-wrap li:nth-child(5) {opacity:0;}
-//.slide-wrap li:nth-child(4) {opacity:1;}
-//.slide-wrap li:nth-child(3) {opacity:0;}
-//.slide-wrap li:nth-child(2) {opacity:0;}
-//.slide-wrap li:nth-child(1) {opacity:0;}
- 
-//.slide-wrap li:nth-child(5) {opacity:0;}
-//.slide-wrap li:nth-child(4) {opacity:0;}
-//.slide-wrap li:nth-child(3) {opacity:1;}
-//.slide-wrap li:nth-child(2) {opacity:0;}
-//.slide-wrap li:nth-child(1) {opacity:0;}
-
-//.slide-wrap li:nth-child(5) {opacity:0;}
-//.slide-wrap li:nth-child(4) {opacity:0;}
-//.slide-wrap li:nth-child(3) {opacity:0;}
-//.slide-wrap li:nth-child(2) {opacity:1;}
-//.slide-wrap li:nth-child(1) {opacity:0;}
-
-//.slide-wrap li:nth-child(5) {opacity:0;}
-//.slide-wrap li:nth-child(4) {opacity:0;}
-//.slide-wrap li:nth-child(3) {opacity:0;}
-//.slide-wrap li:nth-child(2) {opacity:0;}
-//.slide-wrap li:nth-child(1) {opacity:1;}
+//#main #section1 .slide-container .slide-view .slide-wrap li:nth-child(1){z-index:1;}
+//#main #section1 .slide-container .slide-view .slide-wrap li:nth-child(2){z-index:2;opacity:0;transform:opacity .5;}
+//#main #section1 .slide-container .slide-view .slide-wrap li:nth-child(3){z-index:1;opacity:1;}
+//#main #section1 .slide-container .slide-view .slide-wrap li:nth-child(4){z-index:1;}
 
 // 필요한 변수 : nth-child (cnt) cnt 1 2 3 4 5
 // cnt번째 슬라이드가 opacity 1일때, 나머지 슬라이드는 opacity 0으로 설정한다
@@ -146,7 +122,7 @@
             });
 
             function pageBtnFn(z){
-                z<0? z=5 : z;
+                z>3? z=0 : z;
                 $(".page").removeClass("addPage");
                 $(".page").eq(z).addClass("addPage");
             }
