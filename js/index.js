@@ -35,35 +35,38 @@
 
         section1Fn  :function(){
 
-            var cnt = 0;
+            var cnt = -1;
             var setId = 0;
 
             function nextSlideFn(){
                 cnt++;
-                cnt>4? cnt=0:cnt;
+                if(cnt>4){cnt=0};
                 mainNextSlideFn();
             };
 
             function prevSlideFn(){
                 cnt--;
-                //mainSlideFn();
+                if(cnt<0){cnt=4};
+                mainPrevSlideFn();
             };            
 
             function mainNextSlideFn(){
-                $(".slide").css({ zIndex : 3 }).stop().animate({ opacity:1 },0)
-                $(".slide").eq( cnt ).css({ zIndex : 5 }).stop().animate({ opacity:0 },1000)//                0   1   2  3   4   (5)0
+                $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
+                $(".slide").eq( cnt ).css({ zIndex : 3 }).stop().animate({ opacity:0 },1000)         //  0   1   2  3   4   (5)0
                 console.log(cnt)
-                $(".slide").eq( cnt+1==5? cnt=0:cnt ).css({ zIndex : 4 }).stop().animate({ opacity:1 },0)//  1   2   3  4  (5)0   1
-                console.log(cnt+1)
-
-                //pageBtnFn(cnt);
+                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  1   2   3  4  (5)0   1
+                console.log(cnt)
+                pageBtnFn(cnt);
             }
-            setInterval(mainNextSlideFn,3000);
-            // .slide-wrap .slide  {z-index:1;}
-            // .slide-wrap .slide0 {z-index:3;opacity:0.5;}
-            // .slide-wrap .slide1 {z-index:2;}
-
-/*          $(".prev-btn").on({
+            function mainPrevSlideFn(){
+                $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
+                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 3 }).stop().animate({ opacity:0 },1000)         //  0   4   3   2   1   0
+                console.log(cnt+1)
+                $(".slide").eq( cnt ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  4   3   2   1   0   4
+                console.log(cnt)
+            }
+            
+             $(".prev-btn").on({
                 click:function(){
                     if( !$(".slide-wrap").is(":animated") ){
                         prevSlideFn();
@@ -77,7 +80,7 @@
                         nextSlideFn();
                     }
                 }
-            });*/
+            });
 
             // function initFn(){
             //     setId = setInterval(nextSlideFn,5000);
