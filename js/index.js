@@ -55,8 +55,8 @@
                     $(".slide-wrap").stop().animate({ left:-1920*cnt },0)
                 }) */
                 $(".slide-wrap li").eq(cnt).css({ zIndex:1 }).stop().animate({ opacity:0 },0,function(){
-                    if( cnt>3 ){ cnt=0; }
-                    if( cnt<0 ){ cnt=3; }
+                    if( cnt>4 ){ cnt=0; }
+                    if( cnt<0 ){ cnt=4; }
                     $(".slide-wrap li").eq(cnt).css({ zIndex:2 }).stop().animate({ opacity:1 },500)
                     console.log(cnt);
                 })
@@ -101,7 +101,7 @@
             });
 
             function pageBtnFn(z){
-                z>3? z=0 : z;
+                z>4? z=0 : z;
                 $(".page").removeClass("addPage");
                 $(".page").eq(z).addClass("addPage");
                 console.log(z);
