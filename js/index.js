@@ -52,18 +52,19 @@
 
             function mainNextSlideFn(){
                 $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
-                $(".slide").eq( cnt ).css({ zIndex : 3 }).stop().animate({ opacity:0 },1000)         //  0   1   2  3   4   (5)0
-                console.log(cnt)
+                $(".slide").eq( cnt ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)         //  0   1   2  3   4   (5)0
+                //console.log("Next", cnt)
                 $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  1   2   3  4  (5)0   1
-                console.log(cnt)
-                pageBtnFn(cnt);
+                //console.log(cnt)
+                pageBtnFn(cnt+1);
             }
             function mainPrevSlideFn(){
                 $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
-                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 3 }).stop().animate({ opacity:0 },1000)         //  0   4   3   2   1   0
-                console.log(cnt+1)
+                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)         //  0   4   3   2   1   0
+                //console.log("prev", cnt)
                 $(".slide").eq( cnt ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  4   3   2   1   0   4
-                console.log(cnt)
+                //console.log(cnt)
+                pageBtnFn(cnt);
             }
             
              $(".prev-btn").on({
@@ -82,18 +83,19 @@
                 }
             });
 
-            // function initFn(){
-            //     setId = setInterval(nextSlideFn,5000);
-            // }
+            function initFn(){
+                setId = setInterval(nextSlideFn,5000);
+            }
 
-            // initFn();
+            initFn();
 
             $(".page").each(function(index){
                 $(this).on({
                     click : function(){
-                        cnt = index;
+                        cnt+1 == index;
                         mainNextSlideFn();
-                        //console.log(cnt);
+                        mainPrevSlideFn();
+                        //console.log("page", cnt);
                     }
                 })
             });
