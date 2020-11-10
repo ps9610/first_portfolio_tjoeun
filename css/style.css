@@ -329,3 +329,18 @@
 .quick > span {display:block;}
 .quick > span > a {display:block;}
 .quick > span > a > img {width:200px;height:45.3724605px;}    
+
+.modal {z-index:5;position:fixed;top:20%;left:0;width:100%;}
+.modal .wrap {width:984px;margin:0 auto;height:552px;}
+.modal .wrap .header {width:100%;background:#f7f7f7;}
+.modal .wrap .header-wrap {padding:23px 0 0 40px;}
+.modal .wrap .header-wrap .header-content {width:100%;height:37px;}
+.modal .wrap .header-wrap .header-content > span {display:inline-block;}
+.modal .wrap .header-wrap .header-content > span:first-child {width:42px;height:15px;}
+.modal .wrap .header-wrap .header-content > span:last-child {width:57px;height:15px;}
+.modal .wrap .header-wrap .header-content > span > a {display:inline-block;padding-bottom:17px;height:18px;}
+.modal .wrap .header-wrap .header-content > span:first-child > a {width:100%;background:url(../img/txt_hotel_search_tab.png) no-repeat 63% 400%;background-size:200px 40px;}
+.modal .wrap .header-wrap .header-content > span:last-child > a {width:100%;margin-left:30px;background:url(../img/txt_hotel_search_tab.png) no-repeat 0% 0%;background-size:200px 40px;}
+.modal .wrap .header .main {padding:5px 40px 0 40px;height:487px;background:#fff;}
+.modal .wrap .header .main .domestic {}
+.modal .wrap .header .main .aboard {}
