@@ -16,27 +16,26 @@
         },
 
         headerFn    :function(){
-            //#header .wrap .h-right .row1 .language
-            // 헤더의 langKo 박스를 클릭하면 addclass된다.
-            
+
             $(".langKo").on({
                 click : function(){
-                    $("#header ul").addClass(".addLang");
-                    $(".addLang").css("visibility","visible");
-                }
+                    $("#header ul").addClass(".addLang")
+                    $(".addLang").css("visibility","visible") }
             });
+
             $(".L-korea a ").on({
                 click : function(){
-                    $("#header ul").removeClass(".addLang");
-                    $(".addLang").css("visibility","hidden");
-                }
-            })
+                    $("#header ul").removeClass(".addLang")
+                    $(".addLang").css("visibility","hidden") }
+            });
         },
 
         section1Fn  :function(){
 
             var cnt = -1;
             var setId = 0;
+
+            setTimeout(initFn,100)
 
             function nextSlideFn(){
                 cnt++;
@@ -52,50 +51,46 @@
 
             function mainNextSlideFn(){
                 $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
-                $(".slide").eq( cnt ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)         //  0   1   2  3   4   (5)0
-                //console.log("Next", cnt)
-                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  1   2   3  4  (5)0   1
-                //console.log(cnt)
+                $(".slide").eq( cnt ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)
+                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)
                 pageBtnFn(cnt+1);
             }
             function mainPrevSlideFn(){
                 $(".slide").css({ zIndex : 1 }).stop().animate({ opacity:1 },0)
-                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)         //  0   4   3   2   1   0
-                //console.log("prev", cnt)
-                $(".slide").eq( cnt ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)//  4   3   2   1   0   4
-                //console.log(cnt)
+                $(".slide").eq( cnt==4? 0:cnt+1 ).css({ zIndex : 3 }).stop().animate({ opacity:0 },800)
+                $(".slide").eq( cnt ).css({ zIndex : 2 }).stop().animate({ opacity:1 },0)
                 pageBtnFn(cnt);
             }
             
              $(".prev-btn").on({
-                click:function(){
-                    if( !$(".slide-wrap").is(":animated") ){
-                        prevSlideFn();
-                    }
+                click:function(){ 
+                    if( !$(".slide-wrap").is(":animated") ){ 
+                        prevSlideFn(); 
+                        clearInterval(setId);
+                    } 
                 }
             });
             
             $(".next-btn").on({
                 click:function(){
-                    if( !$(".slide-wrap").is(":animated") ){
-                        nextSlideFn();
+                    if( !$(".slide-wrap").is(":animated") ){ 
+                        nextSlideFn(); 
+                        clearInterval(setId);
                     }
                 }
             });
 
-            function initFn(){
-                setId = setInterval(nextSlideFn,5000);
-            }
+            function initFn(){ 
+                setId = setInterval(nextSlideFn,5000) }
+            //initFn();
 
-            initFn();
-
-            $(".page").each(function(index){
+            $(".page-btn").each(function(index){
                 $(this).on({
                     click : function(){
-                        cnt+1 == index;
-                        mainNextSlideFn();
-                        mainPrevSlideFn();
-                        //console.log("page", cnt);
+                        cnt == index;
+                        nextSlideFn();
+                        console.log(index)
+                        //clearInterval(setId);
                     }
                 })
             });
@@ -104,8 +99,27 @@
                 z>4? z=0 : z;
                 $(".page").removeClass("addPage");
                 $(".page").eq(z).addClass("addPage");
-                console.log(z);
-            }  
+            }
+//.play-pause-btn {display:block;width:9px;height:12px;background:url(../img/main_prom_stop.png) no-repeat 50% 50%;}
+//.play-pause-btn.addPlay {background-image:url(../img/main_prom_play.png);}
+
+            var t = 0;
+
+            $(".play-pause-btn").on({
+                click : function(){
+                    if(t == 0){
+                        $(this).addClass("addPlay");
+                        t = 1;
+                        //setInterval 멈추는 clearInterval 설정 = 
+                    clearInterval(setId);
+                    }
+                    else if (t == 1){
+                        $(this).removeClass("addPlay");
+                        t = 0;
+                        initFn();
+                    }
+                }
+            })
         },
 
         section2Fn  :function(){},
