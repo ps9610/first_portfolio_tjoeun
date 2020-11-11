@@ -28,6 +28,19 @@
                     $("#header ul").removeClass(".addLang")
                     $(".addLang").css("visibility","hidden") }
             });
+
+            $(".find-h").on({
+                click : function(){
+                    $("html").addClass("addModal");
+                    $(".modal").show();
+                }
+            })
+            $(".close").on({
+                click : function(){
+                    $("html").removeClass("addModal");
+                    $(".modal").hide();
+                }
+            })
         },
 
         section1Fn  :function(){

@@ -1,1 +1,6 @@
 https://www.shillahotels.com/index.do
+
+웹 표준검사(html, css)
+익스플로어, 크롬, 파이어폭스
+common.css 확인
+접근성(skip ~ nav)

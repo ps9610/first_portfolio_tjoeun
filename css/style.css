@@ -196,8 +196,7 @@
 #main #section4 .wrap {width:100%;margin:150px auto 0;background:#f6f6f6;}
 #main #section4 .wrap .rewards-wrap {position:relative;width:1200px;height:262px;padding:50px 0;margin:0 auto;}
 #main #section4 .wrap .rewards-wrap > h2 {width:100%;margin-bottom:50px;}
-#main #section4 .wrap .rewards-wrap > h2 > div {width:243px;height:80px;margin:0 auto;}
-#main #section4 .wrap .rewards-wrap > h2 > div > img {width:100%;height:100%;}
+#main #section4 .wrap .rewards-wrap > h2 > img {display:block;width:243px;height:80px;margin:0 auto;}
 
 #main #section4 .wrap .rewards-wrap > ul {width:100%;margin:40px 0;}
 #main #section4 .wrap .rewards-wrap > ul > li {float:left;height:49px;padding-top:2px;}
@@ -227,7 +226,7 @@
 #main #section5 .wrap {width:1200px;margin:100px auto 200px;}
 #main #section5 .wrap > h2 {width:170px;height:80px;margin:0 auto 50px;background:url(../img/enjoyTit.gif) no-repeat 50% 0;}
 #main #section5 .wrap > span {display:block;margin-bottom:50px;width:100%;height:675px;padding-bottom:6px;}
-#main #section5 .wrap > span > iframe {display:block;width:100%;height:100%;}
+#main #section5 .wrap > span > iframe {display:block;width:100%;height:100%;border:0;}/* frameborder="0"는 더 이상 지원하지 않음 */
 
 #footer {z-index:1;position:relative;width:100%;top:22px;}
 #footer .footer1 {width:100%;}
@@ -330,17 +329,68 @@
 .quick > span > a {display:block;}
 .quick > span > a > img {width:200px;height:45.3724605px;}    
 
-.modal {z-index:5;position:fixed;top:20%;left:0;width:100%;}
+.modal {display:none;z-index:5;position:fixed;top:22%;left:.4%;width:100%;}
 .modal .wrap {width:984px;margin:0 auto;height:552px;}
 .modal .wrap .header {width:100%;background:#f7f7f7;}
-.modal .wrap .header-wrap {padding:23px 0 0 40px;}
-.modal .wrap .header-wrap .header-content {width:100%;height:37px;}
-.modal .wrap .header-wrap .header-content > span {display:inline-block;}
-.modal .wrap .header-wrap .header-content > span:first-child {width:42px;height:15px;}
-.modal .wrap .header-wrap .header-content > span:last-child {width:57px;height:15px;}
-.modal .wrap .header-wrap .header-content > span > a {display:inline-block;padding-bottom:17px;height:18px;}
-.modal .wrap .header-wrap .header-content > span:first-child > a {width:100%;background:url(../img/txt_hotel_search_tab.png) no-repeat 63% 400%;background-size:200px 40px;}
-.modal .wrap .header-wrap .header-content > span:last-child > a {width:100%;margin-left:30px;background:url(../img/txt_hotel_search_tab.png) no-repeat 0% 0%;background-size:200px 40px;}
-.modal .wrap .header .main {padding:5px 40px 0 40px;height:487px;background:#fff;}
-.modal .wrap .header .main .domestic {}
-.modal .wrap .header .main .aboard {}
+.modal .wrap .header .header-wrap {position:relative;padding:23px 0 0 40px;}
+.modal .wrap .header .header-wrap .header-content {float:left;width:100%;}
+.modal .wrap .header .header-wrap .header-content > span {display:inline-block;height:37px;}
+.modal .wrap .header .header-wrap .header-content > span.domestic-txt {width:42px;}
+.modal .wrap .header .header-wrap .header-content > span.aboard-txt {width:57px;margin-left:33px;}
+.modal .wrap .header .header-wrap .header-content > span > a {display:block;margin-bottom:17px;height:15px;}
+.modal .wrap .header .header-wrap .header-content > span.domestic-txt > a {width:100%;padding-right:18px;border-right:1px solid #eaeaea;background:url(../img/txt_hotel_search_tab.png) no-repeat 0 80%;background-size:200px 40px;}
+.modal .wrap .header .header-wrap .header-content > span.aboard-txt > a {width:100%;padding-left:15px;background:url(../img/txt_hotel_search_tab.png) no-repeat 0% 0%;background-size:200px 40px;}
+.modal .wrap .header .header-wrap .header-content > span.addClick {height:35px;border-bottom:2px solid #333;}
+.modal .wrap .header .header-wrap .header-content > .domestic-txt.addClick > a {background-position:70% 80%;}
+.modal .wrap .header .header-wrap .header-content > .aboard-txt.addClick > a {background-position:79% 0;}
+.modal .wrap .header .header-wrap .close {float:right;position:absolute;top:23px;right:23px;}
+.modal .wrap .header .header-wrap .close > span {display:inline-block;}
+.modal .wrap .header .header-wrap .close > span > a {display:block;}
+.modal .wrap .header .header-wrap .close > span > a > img {width:100%;}
+
+.modal .wrap .main {padding:5px 40px 0 40px;/* height:487px; */background:#fff;}
+.modal .wrap .main .domestic {position:relative;width:904px;height:397px;border-bottom:1px dotted #eaeaea;}
+.modal .wrap .main .domestic > span {position:absolute;display:inline-block;top:37px;left:0;}
+.modal .wrap .main .domestic > span > a {display:block;}
+.modal .wrap .main .domestic > span > a > img {width:auto;}
+.modal .wrap .main .domestic-content {width:754px;padding-left:150px;}
+.modal .wrap .main .domestic-content .d-row1 {width:100%;height:88px;padding:25px 0 19px 0;}
+.modal .wrap .main .domestic-content .d-row1 > span.d-north {float:left;width:140px;padding-top:15px;display:block;}
+.modal .wrap .main .domestic-content .d-row1 > span.d-north > img {width:auto;display:inline-block;}
+.modal .wrap .main .domestic-content .d-row1 > ul {float:left;width:612px;display:block;}
+.modal .wrap .main .domestic-content .d-row1 > ul .north-hotel {display:inline-block;margin:0 0 6px 2px;}
+.modal .wrap .main .domestic-content .d-row1 > ul .north-hotel > a {display:block;width:196px;height:36px;font-size:13px;border:1px solid #eaeaea;color:#8f8f8f;font-weight:800;text-align:center;line-height:36px;}
+.modal .wrap .main .domestic-content .d-row1 > ul .north-hotel > a:hover:after {content:"";display:block;width:195px;height:35px;position:relative;bottom:36px;border:2px solid #856f56;}
+.modal .wrap .main .domestic-content .d-row1 > ul .north-hotel > a:hover {border-color:transparent;color:#856f56;font-weight:800;}
+
+.modal .wrap .main .domestic-content .d-row2 {width:100%;height:88px;padding:25px 0 19px 0;border-top:1px dotted #eaeaea;}
+.modal .wrap .main .domestic-content .d-row2 > span.d-south {float:left;width:140px;padding-top:15px;display:block;}
+.modal .wrap .main .domestic-content .d-row2 > span.d-south > img {width:auto;display:inline-block;}
+.modal .wrap .main .domestic-content .d-row2 > ul {float:left;width:612px;display:block;}
+.modal .wrap .main .domestic-content .d-row2 > ul .south-hotel {display:inline-block;margin:0 0 6px 2px;}
+.modal .wrap .main .domestic-content .d-row2 > ul .south-hotel > a {display:block;width:196px;height:36px;font-size:13px;border:1px solid #eaeaea;color:#8f8f8f;font-weight:800;text-align:center;line-height:36px;}
+.modal .wrap .main .domestic-content .d-row2 > ul .south-hotel > a:hover:after {content:"";display:block;width:195px;height:35px;position:relative;bottom:36px;border:2px solid #856f56;} 
+.modal .wrap .main .domestic-content .d-row2 > ul .south-hotel > a:hover {border-color:transparent;color:#856f56;font-weight:800;} 
+
+.modal .wrap .main .domestic-content .d-row3 {width:100%;height:88px;padding:25px 0 19px 0;border-top:1px dotted #eaeaea;}
+.modal .wrap .main .domestic-content .d-row3 > span.d-nation {float:left;width:140px;padding-top:15px;display:block;}
+.modal .wrap .main .domestic-content .d-row3 > span.d-nation > img {width:auto;display:inline-block;}
+.modal .wrap .main .domestic-content .d-row3 > ul {float:left;width:612px;display:block;}
+.modal .wrap .main .domestic-content .d-row3 > ul .nation-hotel {display:inline-block;margin:0 0 6px 2px;}
+.modal .wrap .main .domestic-content .d-row3 > ul .nation-hotel > a {display:block;width:196px;height:36px;font-size:13px;border:1px solid #eaeaea;color:#8f8f8f;font-weight:800;text-align:center;line-height:36px;}
+.modal .wrap .main .domestic-content .d-row3 > ul .nation-hotel > a:hover:after {content:"";display:block;width:195px;height:35px;position:relative;bottom:36px;border:2px solid #856f56;} 
+.modal .wrap .main .domestic-content .d-row3 > ul .nation-hotel > a:hover {border-color:transparent;color:#856f56;font-weight:800;} 
+
+.modal .wrap .main .aboard {position:relative;width:904px;}
+.modal .wrap .main .aboard > span {position:absolute;display:inline-block;top:40px;left:0;}
+.modal .wrap .main .aboard > span > a {display:block;}
+.modal .wrap .main .aboard > span > a > img {width:auto;}
+.modal .wrap .main .aboard .aboard-content {width:754px;padding-left:150px;height:auto;}
+.modal .wrap .main .aboard .aboard-content .a-row1 {width:100%;height:44px;padding:25px 0 19px 0;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > span.d-viet {float:left;width:140px;padding-top:15px;display:block;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > span.d-viet > img {width:auto;display:inline-block;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > ul {float:left;width:612px;display:block;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel {display:inline-block;margin:0 0 6px 2px;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a {display:block;width:196px;height:36px;font-size:13px;border:1px solid #eaeaea;color:#8f8f8f;font-weight:800;text-align:center;line-height:36px;}  
+.modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a:hover:after {content:"";display:block;width:195px;height:35px;position:relative;bottom:36px;border:2px solid #856f56;} 
+.modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a:hover {border-color:transparent;color:#856f56;font-weight:800;} 
