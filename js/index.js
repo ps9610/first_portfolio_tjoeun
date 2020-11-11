@@ -33,12 +33,26 @@
                 click : function(){
                     $("html").addClass("addModal");
                     $(".modal").show();
+                    $(".modal-bg").show()
                 }
             })
             $(".close").on({
                 click : function(){
                     $("html").removeClass("addModal");
                     $(".modal").hide();
+                    $(".modal-bg").hide();
+                }
+            })
+            //go-top btn
+            $(window).scroll(function(){
+                if( $(this).scrollTop()>=30 ){
+                    $(".go-top").addClass("addGotop");
+                    $(".quick").stop().animate({opacity:1},300);
+                }
+                else{
+                    $(".go-top").removeClass("addGotop");
+                    $(".quick").stop().animate({opacity:0},0);
+
                 }
             })
         },
@@ -154,12 +168,47 @@
         },
 
         section2Fn  :function(){},
-        section3Fn  :function(){},
+        section3Fn  :function(){
+            var t = 0;
+            var s1H = $("#section1").offset().top;
+            //console.log(s1H) = 90
+            function initS3Title(){
+                $("#section3 .title-wrap").stop().animate({ opacity:1 },500)
+                $("#section3 .photo-wrap").stop().animate({ opacity:1 },500)
+                $("#section3 .title-wrap").stop().animate({ top:-20 },500)
+                //$("#section3 .title-wrap").offset().top-20;
+            }
+            function animateS3Title(){
+                $("#section3 .title-wrap").stop().animate({ opacity:0 },0)
+                $("#section3 .photo-wrap").stop().animate({ opacity:0 },0)
+                $("#section3 .title-wrap").stop().animate({ top:0 });
+                //$("#section3 .title-wrap").offset().top+0;
+            }
+
+            $(window).scroll(function(){
+                if( $(this).scrollTop() >= s1H ){ 
+                    if( t = 0 ){
+                        // console.log( $("#section3 .title-wrap").offset().top); 886
+                        t = 1;
+                        initS3Title();
+
+                    }
+                }
+                if( $(this).scrollTop() < s1H ){ 
+                    if( t = 1 ){
+                        // console.log( $("#section3 .title-wrap").offset().top); 886
+                        t = 0;
+                        animateS3Title();
+                    }
+                }
+            })
+        },
         section4Fn  :function(){},
         section5Fn  :function(){},
         section6Fn  :function(){},
         section7Fn  :function(){},
-        footerFn    :function(){}
+        footerFn    :function(){},
+
 }
 
 hotel.init();    
