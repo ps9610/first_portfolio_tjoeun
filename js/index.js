@@ -10,8 +10,6 @@
             that.section3Fn();
             that.section4Fn();
             that.section5Fn();
-            that.section6Fn();
-            that.section7Fn();
             that.footerFn();
         },
 
@@ -54,6 +52,12 @@
                     $(".quick").stop().animate({opacity:0},0);
 
                 }
+                $(".go-top").on({
+                    click : function(e){
+                        e.preventDefault();
+                        $("html, body").stop().animate({ scrollTop : $("#header").offset().top },500)
+                    }
+                })
             })
         },
 
@@ -172,41 +176,62 @@
             var t = 0;
             var s1H = $("#section1").offset().top;
             //console.log(s1H) = 90
+            //스크롤이 s1H의 값을 가질때 제자리로 오는거니까 초기값은 멀어져있는게 맞음
             function initS3Title(){
-                $("#section3 .title-wrap").stop().animate({ opacity:1 },500)
-                $("#section3 .photo-wrap").stop().animate({ opacity:1 },500)
-                $("#section3 .title-wrap").stop().animate({ top:-20 },500)
-                //$("#section3 .title-wrap").offset().top-20;
+                $("#section3 .title-wrap").stop().animate({ top:38, opacity:0 },0)
+                $("#section3 .photo-wrap").stop().animate({ top:25, opacity:0 },0)
+                //$("#section3 .title-wrap").offset().top+0;
             }
             function animateS3Title(){
-                $("#section3 .title-wrap").stop().animate({ opacity:0 },0)
-                $("#section3 .photo-wrap").stop().animate({ opacity:0 },0)
-                $("#section3 .title-wrap").stop().animate({ top:0 });
-                //$("#section3 .title-wrap").offset().top+0;
+                $("#section3 .title-wrap").stop().animate({ top:-8, opacity:1 },500)
+                $("#section3 .photo-wrap").stop().animate({ top:0, opacity:1 },700)
+                //$("#section3 .title-wrap").offset().top-20;
             }
 
             $(window).scroll(function(){
                 if( $(this).scrollTop() >= s1H ){ 
-                    if( t = 0 ){
-                        // console.log( $("#section3 .title-wrap").offset().top); 886
-                        t = 1;
-                        initS3Title();
-
-                    }
+                    if( t=0 ){ t= 1; }
+                    animateS3Title();
+                    //console.log( s1H );
                 }
                 if( $(this).scrollTop() < s1H ){ 
-                    if( t = 1 ){
-                        // console.log( $("#section3 .title-wrap").offset().top); 886
-                        t = 0;
-                        animateS3Title();
-                    }
+                    if( t = 1 ){ t=0; }
+                    // console.log( $("#section3 .title-wrap").offset().top); 886
+                    initS3Title();
                 }
             })
         },
-        section4Fn  :function(){},
-        section5Fn  :function(){},
-        section6Fn  :function(){},
-        section7Fn  :function(){},
+        section4Fn  :function(){
+            $(window).scroll(function(){
+                var t=0;
+                var S3PhotoH = $("#section3 .photo-wrap").offset().top
+                if( $(this).scrollTop() >= S3PhotoH ){
+                    if(t=0){t=1}
+                    $("#section4").stop().animate({ top:0, opacity:1 },600)
+                }
+                if( $(this).scrollTop() < S3PhotoH ){
+                    if(t=1){t=0}
+                    $("#section4").stop().animate({ top:30, opacity:0 },0)
+                } 
+            })
+            //console.log( $("#section3 .photo-wrap").offset().top )
+        },
+        section5Fn  :function(){
+            var t=0;
+            var S3PhotoH = $("#section3 .photo-wrap").offset().top
+            $(window).scroll(function(){
+                if( $(this).scrollTop() >= S3PhotoH+450 ){
+                    if(t=0){t=1}
+                    $("#section5 h2").stop().animate({top:0, opacity:1},600)
+                    $("#section5 span").stop().animate({top:0, opacity:1},900)
+                }
+                if( $(this).scrollTop() < S3PhotoH+450 ){
+                    if(t=1){t=0}
+                    $("#section5 h2").stop().animate({top:30, opacity:0},0)
+                    $("#section5 span").stop().animate({top:45, opacity:0},0)
+                }
+            })
+        },
         footerFn    :function(){},
 
 }
