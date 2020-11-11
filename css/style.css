@@ -89,7 +89,7 @@
 
 #main #section2 {z-index:2;position:relative;width:100%;}
 #main #section2 .details {width:1200px;margin:0 auto;padding-top:42px;}
-#main #section2 .details .left-wrap {z-index:1;position:relaitve;float:left;width:1002px;}
+#main #section2 .details .left-wrap {z-index:1;position:relative;float:left;width:1002px;}
 #main #section2 .details .left-wrap:after {z-index:2;position:relative;top:0;content:"";display:block;width:100%;height:1px;background:#eaeaea;}
 #main #section2 .details .left-wrap .hotel-city {float:left;width:239px;height:45px;margin-bottom:13px;}
 #main #section2 .details .left-wrap .hotel-city .choice-img {display:block;height:20px;margin-bottom:1px;}
@@ -394,3 +394,5 @@
 .modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a {display:block;width:196px;height:36px;font-size:13px;border:1px solid #eaeaea;color:#8f8f8f;font-weight:800;text-align:center;line-height:36px;}  
 .modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a:hover:after {content:"";display:block;width:195px;height:35px;position:relative;bottom:36px;border:2px solid #856f56;} 
 .modal .wrap .main .aboard .aboard-content .a-row1 > ul .viet-hotel > a:hover {border-color:transparent;color:#856f56;font-weight:800;} 
+
+.w3c {z-index:5;position:fixed;bottom:0;left:0;}
