@@ -173,9 +173,12 @@
 
         section2Fn  :function(){},
         section3Fn  :function(){
+            
+            var cnt = -1;
             var t = 0;
             var s1H = $("#section1").offset().top;
             //console.log(s1H) = 90
+            //parallax scrolling
             //스크롤이 s1H의 값을 가질때 제자리로 오는거니까 초기값은 멀어져있는게 맞음
             function initS3Title(){
                 $("#section3 .title-wrap").stop().animate({ top:38, opacity:0 },0)
@@ -200,6 +203,27 @@
                     initS3Title();
                 }
             })
+
+            setInterval(rollingFn,1000);
+
+            //.notice-content > ul {display:none;position:absolute;top:0;left:0;line-height:24px;font-size:12px;text-align:center;color:#3e2b2c;}
+            //.notice-content > ul:first-child {display:block;top:-15px;line-height:24px;font-size:12px;text-align:center;color:#3e2b2c;}
+            //.notice-content > ul:nth-child(2) {display:block;top:0;line-height:24px;font-size:12px;text-align:center;color:#3e2b2c;}
+            //.notice-content > ul:nth-child(3) {display:block;top:0;line-height:24px;font-size:12px;text-align:center;color:#3e2b2c;}
+            //.notice-content > ul:nth-child(4) {display:block;top:0;line-height:24px;font-size:12px;text-align:center;color:#3e2b2c;}
+
+            
+            function rollingFn(){
+                cnt++;
+               if(cnt>3){cnt=0};
+               //if(cnt<0){cnt=4};
+                $(".notice-content ul").stop().animate({top:24},0);//notice-content ul들이 모두 겹쳐있는 상태로 안보이게 위로 올라가있는 상태
+                $(".notice-content ul").eq(cnt).stop().animate({top:0},0); //cnt번째 ul이 top:0인 상태로 대기
+                $(".notice-content ul").eq(cnt==4? 0:cnt+1).stop().animate({top:24},0).animate({top:0},1000);
+                //cnt+1번째 ul이 올라갈 준비 = top 24인 상태로 일시정지, 그 후 보여야되니까 1초 동안 top:0으로 무빙
+                console.log(cnt);   
+            }
+
         },
         section4Fn  :function(){
             $(window).scroll(function(){
