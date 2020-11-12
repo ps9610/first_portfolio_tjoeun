@@ -71,6 +71,7 @@
             
             function prevSlideFn(){
                     cnt--;
+                    if(cnt<0){cnt=3}
                     mainPrevSlideFn();
                 }
                 
@@ -84,14 +85,14 @@
                 $(".slide").stop().animate({opacity:1},0).css({zIndex:1})
                 $(".slide").eq(cnt==0?3:cnt-1).stop().animate({opacity:1},0).css({zIndex:2})
                 $(".slide").eq(cnt).stop().animate({opacity:0},0).animate({opacity:1},500).css({zIndex:3})
-                console.log( cnt )
+                //console.log( cnt )
                 pageFn(cnt);
             }
             function mainPrevSlideFn(){
                 $(".slide").stop().animate({opacity:0},0).css({zIndex:1})
                 $(".slide").eq(cnt).stop().animate({opacity:1},0).css({zIndex:2})                         
                 $(".slide").eq(cnt==3?0:cnt+1).stop().animate({opacity:1},0).animate({opacity:0},500).css({zIndex:3})
-                console.log( cnt )
+                //console.log( cnt )
                 pageFn(cnt);
             }
             
@@ -99,6 +100,7 @@
                 click : function(){
                     if(!$(".slide").is(":animated")){
                         nextSlideFn();
+                        clearInterval(setId);
                         timerControlFn();
                     }
                 }
@@ -108,6 +110,7 @@
                 click : function(){
                     if(!$(".slide").is(":animated")){
                         prevSlideFn();
+                        clearInterval(setId);
                         timerControlFn();
                     }
                 }
@@ -122,7 +125,7 @@
                 z>3? z=0:z;
                 $(".page").removeClass("addPage")
                 $(".page").eq(z).addClass("addPage")
-                console.log(z);
+                //console.log(z);
             }
 
             $(".page").each(function(index){
@@ -131,7 +134,9 @@
                         cnt = index;
                         mainPrevSlideFn();
                         mainNextSlideFn();
+                        clearInterval(setId);
                         timerControlFn();
+
                     }
                 })
             })
@@ -145,11 +150,11 @@
                         cnt2++;
                         if(cnt2>4){
                             nextSlideFn();
-                            $(this).removeClass("addPlay");
+                            $(".play-pause-btn").removeClass("addPlay");
                             clearInterval(setId2);
                             initFn();
                         }
-                    console.log(cnt2)
+                    //console.log(cnt2)
                     }
                     ,1000)
             }
@@ -160,11 +165,10 @@
                     if(x==false){
                         $(this).addClass("addPlay");
                         clearInterval(setId);
+                        clearInterval(setId2);
                 }
                 else if(x==true){
                     nextSlideFn();
-                    clearInterval(setId);
-                    clearInterval(setId2);
                     $(this).removeClass("addPlay");
                     initFn();
                 }
@@ -204,11 +208,12 @@
             
             function rollingFn(){
                 cnt++;
-                if(cnt>3){cnt=0};
+                if(cnt>2){cnt=-1};
 
-                $(".notice-content ul").stop().animate({top:24},0);
-                $(".notice-content ul").eq(cnt).stop().animate({top:0},0);
-                $(".notice-content ul").eq(cnt==3?0:cnt+1).stop().animate({top:24},0).animate({top:0},1000);
+                $(".notice-content ul").stop().animate({top:24},0).css({zIndex:1});//z-index안하면 -1번 씹힘
+                $(".notice-content ul").eq(cnt<0?3:cnt).stop().animate({top:0},0).css({zIndex:2});
+                $(".notice-content ul").eq(cnt+1).stop().animate({top:24},0).animate({top:0},1000).css({zIndex:3});
+                //console.log(cnt);
             }
 
         },
