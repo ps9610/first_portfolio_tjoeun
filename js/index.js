@@ -64,7 +64,6 @@
         section1Fn  :function(){
 
             var cnt = 0;
-            var cnt2 = 0;
             var setId = 0;
             var setId2 = 0;
             
@@ -119,7 +118,7 @@
             function initFn(){
                 setId = setInterval(nextSlideFn,5000)
             }
-            initFn();
+            //initFn();
 
             function pageFn(z){
                 z>3? z=0:z;
@@ -134,9 +133,7 @@
                         cnt = index;
                         mainPrevSlideFn();
                         mainNextSlideFn();
-                        clearInterval(setId);
                         timerControlFn();
-
                     }
                 })
             })
@@ -146,6 +143,7 @@
                 $(".play-pause-btn").addClass("addPlay");
 
                 //멈춘 상태에서 5초뒤 실행
+                var cnt2 = 0;//지역변수가 아니고 전역변수일때 작동하지 않는 이유 : 
                 setId2 = setInterval(function(){
                         cnt2++;
                         if(cnt2>4){
@@ -154,7 +152,8 @@
                             clearInterval(setId2);
                             initFn();
                         }
-                    //console.log(cnt2)
+                    //console.log("cnt",cnt)
+                    console.log("cnt2",cnt2)
                     }
                     ,1000)
             }
