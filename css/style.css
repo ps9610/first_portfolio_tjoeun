@@ -4,8 +4,9 @@
 #header .wrap {width:1200px;height:100%;margin:0 auto;}
 #header .wrap .h-left {float:left;width:33.3%;height:90px;}
 #header .wrap .h-left .h-left-wrap {width:100%;margin:39px 0 0 0;}
-#header .wrap .h-left .h-left-wrap .find {display:inline-block;width:122px;height:51px;background:url(../img/main_hotelsch.png) no-repeat 50% 50%;}
+#header .wrap .h-left .h-left-wrap .find {display:inline-block;width:122px;height:50px;background:url(../img/main_hotelsch.png) no-repeat 50% 50%;}
 #header .wrap .h-left .h-left-wrap .find > a {display:inline-block;width:100%;height:100%;}
+#header .wrap .h-left .h-left-wrap .find.addUnderline > i {display:block;position:relative;bottom:2px;width:100%;height:4px;background:#101010;}
 #header .wrap .h-left .h-left-wrap .resevation {display:inline-block;width:83px;height:50px;background:url(../img/hubMnuResevation.gif) no-repeat 50% 50%;margin-left:24px;}
 #header .wrap .h-left .h-left-wrap .resevation > a {display:inline-block;width:100%;height:100%;}
 #header .wrap .h-left .h-left-wrap .resevation > i {display:none;position:relative;bottom:2px;width:100%;height:4px;background:#101010;}

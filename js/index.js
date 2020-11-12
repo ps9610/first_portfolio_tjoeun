@@ -29,15 +29,17 @@
 
             $(".find-h").on({
                 click : function(){
+                    $(".find").addClass("addUnderline")
                     $("html").addClass("addModal");
-                    $(".modal").show();
+                    $(".modal-local").show();
                     $(".modal-bg").show()
                 }
             })
             $(".close").on({
                 click : function(){
+                    $(".find").removeClass("addUnderline")
                     $("html").removeClass("addModal");
-                    $(".modal").hide();
+                    $(".modal-local").hide();
                     $(".modal-bg").hide();
                 }
             })
