@@ -141,17 +141,17 @@
                 $(".play-pause-btn").addClass("addPlay");
 
                 //멈춘 상태에서 5초뒤 실행
-            setId2 = setInterval(timerFn,1000)
-            function timerFn(){
-                cnt2++;
-                if(cnt2>4){
-                    nextSlideFn();
-                    $(this).removeClass("addPlay");
-                    clearInterval(setId2);
-                    initFn();
-                }
-                console.log(cnt2)
-            }
+                setId2 = setInterval(function(){
+                        cnt2++;
+                        if(cnt2>4){
+                            nextSlideFn();
+                            $(this).removeClass("addPlay");
+                            clearInterval(setId2);
+                            initFn();
+                        }
+                    console.log(cnt2)
+                    }
+                    ,1000)
             }
             $(".play-pause-btn").on({
                 click : function(){
@@ -162,9 +162,11 @@
                         clearInterval(setId);
                 }
                 else if(x==true){
-                    $(this).removeClass("addPlay");
                     nextSlideFn();
-                    timerControlFn();
+                    clearInterval(setId);
+                    clearInterval(setId2);
+                    $(this).removeClass("addPlay");
+                    initFn();
                 }
                 }
             })
