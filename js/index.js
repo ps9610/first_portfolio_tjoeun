@@ -115,8 +115,8 @@
                 $(".slide").stop().animate({opacity:1},0).css({zIndex:1})
                 $(".slide").eq(cnt==0?3:cnt-1).stop().animate({opacity:1},0).css({zIndex:2})
                 $(".slide").eq(cnt).stop().animate({opacity:0},0).animate({opacity:1},500).css({zIndex:3})
-                //console.log( cnt )
                 pageFn(cnt);
+                //console.log( cnt )
             }
             function mainPrevSlideFn(){
                 $(".slide").stop().animate({opacity:0},0).css({zIndex:1})
@@ -149,7 +149,7 @@
             function initFn(){
                 setId = setInterval(nextSlideFn,5000)
             }
-            //initFn();
+            initFn();
 
             function pageFn(z){
                 z>3? z=0:z;
@@ -182,7 +182,7 @@
                             clearInterval(setId2);
                             initFn();
                         }
-                    console.log("cnt2",cnt2)
+                    //console.log("cnt2",cnt2)
                     }
                     ,1000)
             }
