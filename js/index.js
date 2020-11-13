@@ -26,20 +26,49 @@
                     $("#header ul").removeClass(".addLang")
                     $(".addLang").css("visibility","hidden") }
             });
-
-            $(".find-h").on({
+            
+            $(".find-h, .brand-txt").on({
                 click : function(){
                     $(".find").addClass("addUnderline")
                     $("html").addClass("addModal");
-                    $(".modal-local").show();
-                    $(".modal-bg").show()
+                    $(".modal-bg").show();
+                }
+            })
+
+            $(".find-h").on({
+                click : function(){
+                    $("#modal-local").show();
+                    $(".local-txt").addClass("addLocal")
+                    
+                }
+            })
+            $(".brand-txt").on({
+                click : function(){
+                    $(".brand-txt").addClass("addBrand")
+                    $("#modal-brand").show();
+                    $("#modal-local").hide();
+                    $(".header-content span").removeClass("addLocal");
+                    $(".brand-txt").removeClass("addLocal");
+                    $(".local-txt").removeClass("addLocal");
+                }
+            })
+            $(".local-txt").on({
+                click : function(){
+                    $(".local-txt").addClass("addLocal")
+                    $("#modal-local").show();
+                    $("#modal-brand").hide();
+                    $(".header-content span").removeClass("addBrand");
+                    $(".brand-txt").removeClass("addbrand")
+                    $(".local-txt").removeClass(".addbrand");
                 }
             })
             $(".close").on({
                 click : function(){
                     $(".find").removeClass("addUnderline")
                     $("html").removeClass("addModal");
-                    $(".modal-local").hide();
+                    $("#modal-local").hide();
+                    $("#modal-brand").hide();
+                    $(".brand-txt").removeClass("addLocal")
                     $(".modal-bg").hide();
                 }
             })
@@ -144,7 +173,6 @@
                 clearInterval(setId2);
                 $(".play-pause-btn").addClass("addPlay");
 
-                //멈춘 상태에서 5초뒤 실행
                 var cnt2 = 0;//지역변수가 아니고 전역변수일때 작동하지 않는 이유 : 
                 setId2 = setInterval(function(){
                         cnt2++;
@@ -154,7 +182,6 @@
                             clearInterval(setId2);
                             initFn();
                         }
-                    //console.log("cnt",cnt)
                     console.log("cnt2",cnt2)
                     }
                     ,1000)
@@ -214,7 +241,6 @@
                 $(".notice-content ul").stop().animate({top:24},0).css({zIndex:1});//z-index안하면 -1번 씹힘
                 $(".notice-content ul").eq(cnt<0?3:cnt).stop().animate({top:0},0).css({zIndex:2});
                 $(".notice-content ul").eq(cnt+1).stop().animate({top:24},0).animate({top:0},1000).css({zIndex:3});
-                //console.log(cnt);
             }
 
         },
