@@ -1,0 +1,6 @@
+@media all and (min-width:465px) {
+    body{width:1382px;}
+}
+
+@media all and (max-width:991px) and (orientation:landscape){}
+@media all and (max-width:991px) and (orientation:portrait){}

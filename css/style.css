@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
-#header {z-index:3;position:relative;width:100%;background:url(../img/hdBga.gif) repeat 50% 50%;background-size:cover;}
-#header .wrap {width:1200px;height:100%;margin:0 auto;}
+#header {z-index:3;position:relative;width:100%;background:url(../img/hdBga.gif) 50% 0;background-size:100% 100%;}
+#header .wrap {width:1200px;margin:0 auto;}
 #header .wrap .h-left {float:left;width:33.3%;height:90px;}
 #header .wrap .h-left .h-left-wrap {width:100%;margin:39px 0 0 0;}
 #header .wrap .h-left .h-left-wrap .find {display:inline-block;width:122px;height:50px;background:url(../img/main_hotelsch.png) no-repeat 50% 50%;}
